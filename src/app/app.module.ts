@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {AuthenticationGuard} from "../pages/authentication/guards/authentication.guard";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "../pages/authentication/guards/token.interceptor";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {TokenInterceptor} from "../pages/authentication/guards/token.interceptor
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthenticationGuard,

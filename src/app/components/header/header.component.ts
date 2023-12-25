@@ -10,4 +10,8 @@ export class HeaderComponent {
   constructor(
     public auth: AuthenticationService
   ) {}
+
+  logout() {
+    this.auth.logout();
+  }
 }

@@ -1,9 +1,46 @@
-<div class="div" *ngIf="profileModel != undefined">
-  <h1>User Info</h1>
-  <h3>First Name: {{profileModel.firstname}}</h3>
-  <h3>Last Name: {{profileModel.lastname}}</h3>
-  <h3>Email: {{profileModel.email}}</h3>
-  <h3>Username: {{profileModel.username}}</h3>
-  <h3>Date Of Birth: {{profileModel.dateOfBirth}}</h3>
+<div class="profile-wrapper" *ngIf="profileModel != undefined">
+  <div class="profile-wrapper-row">
+    <mat-card>
+      <mat-card-title>
+        First Name
+      </mat-card-title>
+      <mat-card-content>
+        {{profileModel.firstname}}
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        Last Name
+      </mat-card-title>
+      <mat-card-content>
+        {{profileModel.firstname}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="profile-wrapper-row">
+    <mat-card>
+      <mat-card-title>
+        Email
+      </mat-card-title>
+      <mat-card-content>
+        {{profileModel.email}}
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        Username
+      </mat-card-title>
+      <mat-card-content>
+        {{profileModel.username}}
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        Date Of Birth
+      </mat-card-title>
+      <mat-card-content>
+        {{getFormattedDate()}}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
-<button (click)="logout()">Logout</button>

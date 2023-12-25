@@ -1,5 +1,18 @@
 .wrapper {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.content mat-card:first-child {
+  display: flex;
+  align-self: start;
 }

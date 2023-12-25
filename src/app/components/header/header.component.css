@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #181466;
+  height: 60px;
+}
+
+.left {
+  display: flex;
+  margin-left: 20px;
+  font-size: 28px;
+}
+
+.right {
+  display: flex;
+  margin-right: 20px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProfileService} from "./services/profile.service";
 import {ProfileModel} from "./models/profile.model";
-import {AuthenticationService} from "../authentication/services/authentication.service";
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +12,6 @@ export class ProfileComponent implements OnInit {
   public profileModel!: ProfileModel;
 
   constructor(
-    private auth: AuthenticationService,
     private profile: ProfileService
   ) {}
 
@@ -21,8 +19,10 @@ export class ProfileComponent implements OnInit {
     this.profile.getProfile().subscribe((profile) => this.profileModel = profile);
   }
 
-  logout() {
-    this.auth.logout();
+  getFormattedDate(): string {
+    let date = new Date(this.profileModel.dateOfBirth);
+    return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`
   }
 
+  protected readonly Date = Date;
 }

@@ -1,3 +1,15 @@
-<a routerLink="index">Go index</a><br>
-<a routerLink="authentication">Go auth</a><br>
-<a routerLink="profile" *ngIf="auth.isLoggedIn()">Go profile</a><br>
+<div class="header">
+  <div class="left">
+    <a routerLink="index"><i class="fa-solid fa-keyboard"></i></a>
+  </div>
+  <div class="right">
+    <div *ngIf="auth.isLoggedIn(); then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <a routerLink="profile" *ngIf="auth.isLoggedIn()">profile</a>
+      <a href="#" (click)="logout()">logout</a>
+    </ng-template>
+    <ng-template #elseBlock>
+      <a routerLink="authentication">authenticate</a>
+    </ng-template>
+  </div>
+</div>

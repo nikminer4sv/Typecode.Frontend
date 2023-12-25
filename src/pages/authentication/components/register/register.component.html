@@ -1,21 +1,30 @@
 <form class="login-form" [formGroup]="registerForm">
-  <input
-    type="text" placeholder="First Name" formControlName="firstName"
-  />
-  <input
-    type="text" placeholder="Last Name" formControlName="lastName"
-  />
-  <input
-    type="text" placeholder="Username" formControlName="username"
-  />
-  <input
-    type="email" placeholder="Email" formControlName="email"
-  />
-  <input
-    type="date" placeholder="Date Of Birth" formControlName="dateOfBirth"
-  />
-  <input
-    type="password" placeholder="Password" formControlName="password"
-  />
-  <button (click)="onSumbit()">LOGIN</button>
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date Of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput formControlName="password">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSumbit()">REGISTER</button>
 </form>

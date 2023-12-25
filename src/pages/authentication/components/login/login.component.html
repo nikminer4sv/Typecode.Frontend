@@ -1,9 +1,11 @@
 <form class="login-form" [formGroup]="loginForm">
-    <input
-      type="text" placeholder="Username" formControlName="username"
-    />
-    <input
-      type="password" placeholder="Password" formControlName="password"
-    />
-    <button (click)="onSumbit()">LOGIN</button>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password">
+    </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSumbit()">LOGIN</button>
 </form>
