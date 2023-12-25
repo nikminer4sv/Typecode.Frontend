@@ -1,0 +1,9 @@
+<form class="login-form" [formGroup]="loginForm">
+    <input
+      type="text" placeholder="Username" formControlName="username"
+    />
+    <input
+      type="password" placeholder="Password" formControlName="password"
+    />
+    <button (click)="onSumbit()">LOGIN</button>
+</form>

@@ -1,0 +1,9 @@
+<div class="div" *ngIf="profileModel != undefined">
+  <h1>User Info</h1>
+  <h3>First Name: {{profileModel.firstname}}</h3>
+  <h3>Last Name: {{profileModel.lastname}}</h3>
+  <h3>Email: {{profileModel.email}}</h3>
+  <h3>Username: {{profileModel.username}}</h3>
+  <h3>Date Of Birth: {{profileModel.dateOfBirth}}</h3>
+</div>
+<button (click)="logout()">Logout</button>
