@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {AuthenticationModule} from "./authentication/authentication.module";
 import {IndexModule} from "./index/index.module";
 import {ProfileModule} from "./profile/profile.module";
+import {TestsModule} from "./tests/tests.module";
 
 
 
@@ -9,7 +10,8 @@ import {ProfileModule} from "./profile/profile.module";
   exports: [
     IndexModule,
     AuthenticationModule,
-    ProfileModule
+    ProfileModule,
+    TestsModule
   ]
 })
 export class PagesModule { }

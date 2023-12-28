@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 import {LoginResponseModel} from "../models/login-response.model";
 import {RegisterResponseModel} from "../models/register-response.model";
 import {RegisterModel} from "../models/register.model";
+import {Observable} from "rxjs";
+import {RoleModel} from "../../../app/models/role.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,9 @@ export class AuthenticationService {
       form
     ).subscribe((token) => {
       localStorage.setItem(this.tokenKey, token.accessToken);
-      this.router.navigate(['/']);
+      this.router.navigate(['/']).then(() => {
+        window.location.reload();
+      });
     });
   }
 
@@ -45,6 +49,10 @@ export class AuthenticationService {
     ).subscribe((response) => {
       this.login(response.username, response.password);
     });
+  }
+
+  public getRole(): Observable<RoleModel> {
+    return this.http.get<RoleModel>(environment.apiUrl + '/auth/role')
   }
 
   public logout() {

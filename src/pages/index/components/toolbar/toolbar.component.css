@@ -1,0 +1,28 @@
+.toolbar {
+  display: flex;
+  align-content: start;
+  gap: 10px;
+}
+
+.toolbar button {
+  height: 60px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.timer-wrapper {
+  display: flex;
+  height: 60px;
+  font-size: 32px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.timer {
+  display: flex;
+  align-self: center;
+}
+
+.tests {
+  height: 82px;
+}

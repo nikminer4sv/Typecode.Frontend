@@ -1,10 +1,13 @@
 <div class="header">
   <div class="left">
-    <a routerLink="index"><i class="fa-solid fa-keyboard"></i></a>
+    <a routerLink="index">
+      <i class="fa-solid fa-keyboard"></i>
+    </a>
   </div>
   <div class="right">
     <div *ngIf="auth.isLoggedIn(); then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
+      <a routerLink="tests" *ngIf="isAdmin">Tests</a>
       <a routerLink="profile" *ngIf="auth.isLoggedIn()">profile</a>
       <a href="#" (click)="logout()">logout</a>
     </ng-template>

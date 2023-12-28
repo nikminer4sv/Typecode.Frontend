@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Text</mat-label>
+    <textarea matInput [(ngModel)]="text"></textarea>
+  </mat-form-field>
+  <button (click)="add()"mat-button mat-raised-button>CREATE</button>
+</mat-card>
+
+<div class="tests">
+  <mat-card *ngFor="let test of tests" class="test">
+    <div class="left">
+      <div>Title: {{test.title}}</div>
+      <div>Text: {{test.text}}</div>
+    </div>
+    <div class="right">
+      <button mat-button mat-raised-button color="warn" (click)="delete(test.id)">DELETE</button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,28 @@
+.tests {
+  margin-top: 20px;
+}
+
+.test {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  font-size: 20px;
+  gap: 10px;
+}
+
+.right button {
+  height: 35px;
+}
+
+.right {
+  display: flex;
+  vertical-align: middle;
+}

@@ -1,0 +1,18 @@
+<div class="toolbar">
+  <button tabindex="-1" mat-button mat-raised-button (click)="restart()">
+    <i class="fa-solid fa-rotate-right"></i>
+  </button>
+  <mat-card class="timer-wrapper">
+      <div class="timer">
+        {{Utils.getFormattedTime(seconds)}}
+      </div>
+  </mat-card>
+  <mat-form-field class="tests">
+    <mat-label>Tests</mat-label>
+    <mat-select [(ngModel)]="testNumber" (selectionChange)="testChanged()">
+      <span *ngFor="let test of word.tests; index as i">
+        <mat-option [value]="i">{{test.title}}</mat-option>
+      </span>
+    </mat-select>
+  </mat-form-field>
+</div>

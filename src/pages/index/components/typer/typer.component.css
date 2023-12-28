@@ -1,0 +1,41 @@
+.typer {
+  width: 900px;
+  color: #181466;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+  align-self: center;
+  position: relative;
+}
+
+.typer-wrapper {
+  width: 100%;
+  justify-content: center;
+  color: #aaaeb3;
+  position: relative;
+}
+
+.caret {
+  z-index: 100;
+  position: absolute;
+  height: 30px;
+  width: 2px;
+  background-color: white;
+  animation: caretAnimation 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes caretAnimation {
+  0% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

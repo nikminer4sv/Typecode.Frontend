@@ -7,8 +7,9 @@ import {PagesModule} from "../pages/pages.module";
 import { HeaderComponent } from './components/header/header.component';
 import {AuthenticationGuard} from "../pages/authentication/guards/authentication.guard";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {TokenInterceptor} from "../pages/authentication/guards/token.interceptor";
+import {TokenInterceptor} from "../pages/authentication/interceptors/token.interceptor";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ErrorInterceptor} from "../pages/authentication/interceptors/error.interceptor";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [
     AuthenticationGuard,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

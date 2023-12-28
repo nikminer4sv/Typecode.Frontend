@@ -43,4 +43,14 @@
       </mat-card-content>
     </mat-card>
   </div>
+  <mat-card>
+    <mat-card-header class="header-title">Tests</mat-card-header>
+    <div class="test-card" *ngFor="let finishedTest of finishedTests;">
+        <div>Test: {{ finishedTest.title }}</div>
+        <div>Time: {{ Utils.getFormattedTime(finishedTest.time) }}</div>
+        <div>Accuracy: {{ finishedTest.accuracy }}%</div>
+    </div>
+  </mat-card>
+  <button mat-button mat-raised-button class="report-button" (click)="profile.setReport()">SEND REPORT</button>
 </div>
+

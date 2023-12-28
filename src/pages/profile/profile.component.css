@@ -26,3 +26,20 @@ mat-card-title {
 mat-card-content {
   font-size: 16px;
 }
+
+.header-title {
+  font-size: 32px;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
+}
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+.report-button {
+  margin-top: 10px;
+}
